@@ -1,0 +1,26 @@
+# Jekyll configuration for LAO Plugins site
+title: LAO Plugins
+description: A collection of plugins for the LAO project
+baseurl: "/lao-plugins"
+url: "https://abendrothj.github.io"
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Collections
+collections:
+  plugins:
+    output: false
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
