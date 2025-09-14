@@ -3,19 +3,12 @@ version: 1.0.0
 description: A sample plugin demonstrating the basic structure for LAO plugins
 author: LAO Developer
 license: MIT
-main: sample_plugin.py
-dependencies:
-  - python: ">=3.8"
-  - requests: ">=2.25.0"
-category: utility
-tags:
-  - sample
-  - demo
-  - utility
 repository: https://github.com/example/sample-plugin
-documentation: https://github.com/example/sample-plugin/blob/main/README.md
-compatibility:
-  lao_version: ">=1.0.0"
-installation:
-  type: "python"
-  command: "pip install -r requirements.txt"
+tags: [sample, demo, utility]
+capabilities:
+  - name: echo
+    description: Echoes input text for testing
+    input_type: text
+    output_type: text
+compatible_core: 1.0.0
+dependencies: []

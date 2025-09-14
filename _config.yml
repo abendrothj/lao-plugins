@@ -1,19 +1,51 @@
-# Jekyll configuration for LAO Plugins site
-title: LAO Plugins
-description: A collection of plugins for the LAO project
+# Jekyll configuration for LAO Plugin Marketplace
+title: LAO Plugin Marketplace
+description: Official community plugin registry for LAO (Local AI Orchestrator) - discover, share, and contribute plugins that supercharge your local AI workflows
 baseurl: "/lao-plugins"
 url: "https://abendrothj.github.io"
+
+# Site metadata
+author: LAO Community
+email: plugins@lao-project.org
 
 # Build settings
 markdown: kramdown
 theme: minima
 plugins:
   - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
 
-# Collections
+# Collections for plugins
 collections:
   plugins:
-    output: false
+    output: true
+    permalink: /:collection/:name/
+
+# Plugin defaults
+defaults:
+  - scope:
+      path: "plugins"
+      type: "plugins"
+    values:
+      layout: "plugin"
+
+# Navigation
+header_pages:
+  - index.md
+  - CONTRIBUTING.md
+
+# Social links (for theme)
+github_username: abendrothj
+repository: abendrothj/lao-plugins
+
+# SEO
+seo:
+  type: Organization
+  name: LAO Plugin Marketplace
+  links:
+    - https://github.com/abendrothj/lao-plugins
+    - https://github.com/abendrothj/lao
 
 # Exclude from processing
 exclude:
@@ -24,3 +56,4 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - index_backup.md

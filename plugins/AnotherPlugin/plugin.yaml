@@ -3,27 +3,16 @@ version: 2.1.0
 description: Another example plugin showcasing advanced features and integrations
 author: LAO Community
 license: Apache-2.0
-main: another_plugin.js
-dependencies:
-  - node: ">=14.0.0"
-  - express: "^4.17.0"
-  - lodash: "^4.17.0"
-category: integration
-tags:
-  - api
-  - integration
-  - web
-  - advanced
 repository: https://github.com/example/another-plugin
-documentation: https://another-plugin.readthedocs.io
-binary_url: https://github.com/example/another-plugin/releases/latest
-compatibility:
-  lao_version: ">=1.2.0"
-installation:
-  type: "npm"
-  command: "npm install"
-configuration:
-  config_file: "config.json"
-  environment_vars:
-    - API_KEY
-    - BASE_URL
+tags: [api, integration, web, advanced]
+capabilities:
+  - name: api_call
+    description: Makes HTTP API calls to external services
+    input_type: json
+    output_type: json
+  - name: data_transform
+    description: Transforms data between different formats
+    input_type: json
+    output_type: json
+compatible_core: 1.2.0
+dependencies: ["node>=14.0.0", "express^4.17.0"]
