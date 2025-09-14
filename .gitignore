@@ -8,6 +8,9 @@ _site/
 .bundle/
 vendor/
 
+# Backup files
+*_backup.*
+
 # macOS
 .DS_Store
 

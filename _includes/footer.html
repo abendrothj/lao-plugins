@@ -1,0 +1,91 @@
+<footer class="site-footer h-card">
+  <data class="u-url" href="{{ "/" | relative_url }}"></data>
+
+  <div class="wrapper">
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <h4>LAO Plugin Marketplace</h4>
+        <p>Official community plugin registry for LAO (Local AI Orchestrator)</p>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h4>Links</h4>
+        <ul class="footer-links">
+          <li><a href="https://github.com/abendrothj/lao">LAO Main Project</a></li>
+          <li><a href="https://github.com/abendrothj/lao-plugins">Plugin Registry</a></li>
+          <li><a href="{{ "/CONTRIBUTING.html" | relative_url }}">Contribute</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <h4>Community</h4>
+        <p>
+          Stay agentic. Stay local. 
+          <br>
+          <strong>Explore what's possible!</strong>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="wrapper">
+      <p>&copy; {{ site.time | date: '%Y' }} LAO Community. Built with Jekyll and hosted on GitHub Pages.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background-color: #24292e;
+  color: #ffffff;
+  padding: 2rem 0 1rem;
+  margin-top: 3rem;
+}
+
+.footer-col-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer-col h4 {
+  color: #58a6ff;
+  margin-bottom: 0.5rem;
+  border: none;
+  padding: 0;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.25rem;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer-links a:hover {
+  color: #58a6ff;
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  border-top: 1px solid #30363d;
+  padding-top: 1rem;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #8b949e;
+  font-size: 0.9rem;
+}
+</style>
