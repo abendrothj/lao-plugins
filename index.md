@@ -1,22 +1,23 @@
 ---
-layout: home
-title: LAO Plugins
+layout: default
+title: LAO Plugin Marketplace
 ---
 
-# LAO Plugins Repository
+# LAO Plugin Marketplace
 
-Welcome to the official plugin repository for the LAO project! This site hosts a collection of community-contributed and officially maintained plugins that extend LAO's functionality.
+Welcome to the curated directory and marketplace for LAO (Local AI Orchestrator) plugins!
 
-## Available Plugins
+Browse, search, and discover new ways to power local, agentic AI workflows on your own machine—no cloud required.
 
-Browse our collection of plugins to enhance your LAO experience:
+---
+
+## 🔎 Featured Plugins
 
 ### [SamplePlugin](./plugins/SamplePlugin/)
 A sample plugin demonstrating the basic structure and requirements for LAO plugins. Perfect for developers getting started with plugin development.
 
 - **Version:** 1.0.0
 - **Category:** Utility
-- **Language:** Python
 - **Tags:** sample, demo, utility
 
 ### [AnotherPlugin](./plugins/AnotherPlugin/)
@@ -24,61 +25,34 @@ An advanced plugin showcasing integration capabilities and complex features for 
 
 - **Version:** 2.1.0
 - **Category:** Integration
-- **Language:** JavaScript/Node.js
 - **Tags:** api, integration, web, advanced
-
-## Getting Started
-
-To use plugins from this repository:
-
-1. Browse the available plugins above
-2. Check the plugin's README for specific installation instructions
-3. Ensure your LAO installation meets the plugin's compatibility requirements
-4. Follow the plugin's configuration guidelines
-
-## Contributing
-
-We welcome contributions from the community! Whether you want to:
-
-- Submit a new plugin
-- Improve existing plugins
-- Report bugs or issues
-- Enhance documentation
-
-Please see our [Contributing Guidelines](./CONTRIBUTING.md) for detailed information on how to get involved.
-
-## Plugin Structure
-
-All plugins in this repository follow a standard structure:
-
-```
-/plugins/
-    /PluginName/
-        plugin.yaml     # Plugin metadata and configuration
-        README.md       # Plugin documentation
-        [additional files as needed]
-```
-
-## Requirements
-
-To submit a plugin, you must provide:
-
-- `plugin.yaml`: Metadata file with plugin information
-- `README.md`: Comprehensive documentation
-- Optional: Pre-built binary or installation package
-
-## Support
-
-For general questions about LAO plugins:
-
-- Check the plugin's individual documentation
-- Open an issue in this repository
-- Visit the main LAO project for core functionality questions
-
-## License
-
-Individual plugins may have their own licenses. Please check each plugin's documentation for specific licensing information.
 
 ---
 
-*This site is powered by Jekyll and hosted on GitHub Pages.*
+## 🧩 How to Install a Plugin
+
+1. Download or clone the plugin from this repo or its external link.
+2. Copy its dynamic library or files into your LAO `plugins/` directory.
+3. Restart LAO or run `lao plugin list` to confirm installation.
+4. Refer to each plugin's documentation for capabilities and usage examples.
+
+---
+
+## 💡 Build and Submit Your Plugin
+
+Ready to add your own? [Read the guide](CONTRIBUTING.md) and submit a Pull Request!
+
+- Plugins must include a valid manifest (`plugin.yaml`).
+- Include a clear `README.md` for users.
+- We accept all useful agentic and AI workflow extensions that run locally.
+
+---
+
+## 📄 About
+
+The LAO Plugin Marketplace is a community-driven ecosystem—extending LAO's vision of secure, local-first, powerful AI orchestration.  
+For help, open an issue here or in [the main repo](https://github.com/abendrothj/lao).
+
+---
+
+Stay agentic. Stay local. Explore what's possible!

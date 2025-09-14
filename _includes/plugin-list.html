@@ -1,0 +1,118 @@
+<!-- Plugin listing component -->
+<div class="plugin-list">
+  {% assign plugin_dirs = site.static_files | where: "path", "/plugins" %}
+  {% for dir in site.pages %}
+    {% if dir.path contains '/plugins/' and dir.path contains '/README.md' %}
+      {% assign plugin_name = dir.path | split: '/' | slice: 1 %}
+      {% assign plugin_path = '/plugins/' | append: plugin_name | append: '/' %}
+      
+      <div class="plugin-card">
+        <h3><a href="{{ plugin_path | relative_url }}">{{ plugin_name }}</a></h3>
+        
+        <!-- Try to load plugin.yaml data if available -->
+        {% assign yaml_path = '/plugins/' | append: plugin_name | append: '/plugin.yaml' %}
+        {% for file in site.static_files %}
+          {% if file.path == yaml_path %}
+            <div class="plugin-meta">
+              <span class="plugin-type">Plugin</span>
+            </div>
+          {% endif %}
+        {% endfor %}
+        
+        <!-- Extract description from README if possible -->
+        <div class="plugin-description">
+          {{ dir.content | strip_html | truncatewords: 20 }}
+        </div>
+        
+        <div class="plugin-links">
+          <a href="{{ plugin_path | relative_url }}README.html" class="btn btn-outline">Documentation</a>
+          <a href="{{ plugin_path | relative_url }}plugin.yaml" class="btn btn-outline">Manifest</a>
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<style>
+.plugin-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.plugin-card {
+  background: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
+}
+
+.plugin-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.plugin-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  border: none;
+  padding: 0;
+}
+
+.plugin-card h3 a {
+  color: #0366d6;
+  text-decoration: none;
+}
+
+.plugin-card h3 a:hover {
+  text-decoration: underline;
+}
+
+.plugin-meta {
+  margin-bottom: 1rem;
+}
+
+.plugin-type {
+  background-color: #f1f8ff;
+  color: #0366d6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.plugin-description {
+  color: #586069;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.plugin-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.btn-outline {
+  border: 1px solid #0366d6;
+  color: #0366d6;
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: #0366d6;
+  color: white;
+  text-decoration: none;
+}
+</style>

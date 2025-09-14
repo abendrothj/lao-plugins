@@ -1,66 +1,101 @@
-# LAO Plugins
+# LAO Plugin Ecosystem
 
-A curated collection of plugins for the LAO project, hosted as a Jekyll site on GitHub Pages.
+Welcome to the **official community plugin registry** for [LAO (Local AI Orchestrator)](https://github.com/abendrothj/lao)!  
+This is the place to **discover, share, and contribute plugins** that supercharge your local AI workflows.
 
-## 🌐 Visit the Site
+:rocket: **Explore plugins on our site:**  
+https://abendrothj.github.io/lao-plugins
 
-Visit the live plugin repository at: [https://abendrothj.github.io/lao-plugins](https://abendrothj.github.io/lao-plugins)
+---
 
-## 📂 Repository Structure
+## 🌟 About LAO
+
+LAO is an offline, agentic workflow engine for chaining local AI models and plugins into powerful, prompt-driven pipelines. This repo powers the **plugin ecosystem**—open to all!
+
+---
+
+## 📚 Plugin Directory Structure
+
+Plugins live in `/plugins/YourPluginName/`:
 
 ```
-/
-├── _config.yml           # Jekyll configuration
-├── index.md             # Homepage content
-├── CONTRIBUTING.md      # Submission guidelines
-├── plugins/             # Plugin directory
-│   ├── SamplePlugin/    # Example plugin
-│   │   ├── plugin.yaml  # Plugin metadata
-│   │   └── README.md    # Plugin documentation
-│   └── AnotherPlugin/   # Another example plugin
-│       ├── plugin.yaml
-│       └── README.md
-└── README.md           # This file
+/plugins/
+  /MyPlugin/
+    plugin.yaml     # Plugin metadata (manifest, see below)
+    README.md       # Usage/install info
+    [binaries, examples, source, etc.]
 ```
+
+### Example plugin.yaml:
+```
+name: MyAwesomePlugin
+version: 1.0.0
+description: Adds next-gen AI processing to LAO
+author: Contributor Name
+license: MIT
+repository: https://github.com/yourusername/my-awesome-plugin
+tags: [ai, processing, text]
+capabilities:
+  - name: summarize
+    description: Summarizes text with LLM
+    input_type: text
+    output_type: text
+compatible_core: 0.5.0
+dependencies: []
+```
+
+---
 
 ## 🚀 Quick Start
 
-### For Plugin Users
+**To use plugins:**  
+1. Browse or search plugins on [the site](https://abendrothj.github.io/lao-plugins).
+2. Each plugin's `README.md` has install/use instructions.
+3. Check `plugin.yaml` for compatibility/version info.
 
-1. Browse available plugins on the [website](https://abendrothj.github.io/lao-plugins)
-2. Follow individual plugin installation instructions
-3. Ensure LAO compatibility requirements are met
+**To contribute a new plugin:**  
+1. Fork this repo, add a new directory to `/plugins/`.
+2. Include your `plugin.yaml`, `README.md`, and binaries (if distributing).
+3. Submit a Pull Request (see [CONTRIBUTING.md](CONTRIBUTING.md))!
 
-### For Plugin Developers
+---
 
-1. Review the [Contributing Guidelines](CONTRIBUTING.md)
-2. Check out example plugins in the `/plugins` directory
-3. Follow the plugin structure requirements
-4. Submit a pull request with your plugin
+## 🧩 Plugin Requirements
 
-## 📋 Plugin Requirements
+- `plugin.yaml` manifest: required fields as above.
+- Documentation (`README.md`): how to install/use, contact.
+- All distributed binaries built for major OS targets, where needed.
+- List dependencies and special requirements.
 
-Every plugin must include:
+Best starting point: [`plugin-template`](https://github.com/abendrothj/lao/tree/main/plugins/plugin-template)
 
-- `plugin.yaml`: Metadata and configuration
-- `README.md`: Comprehensive documentation
-- Optional: Pre-built binary or source code
+---
 
 ## 🤝 Contributing
 
-We welcome plugin submissions! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on:
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full details!
 
-- Plugin structure requirements
-- Submission process
-- Review criteria
-- Code standards
+- Fork, branch, PR—just like any open source repo.
+- We welcome all contributions that enhance LAO's local agentic workflows.
 
-## 📄 License
-
-Individual plugins have their own licenses. This repository structure is available under the MIT License.
+---
 
 ## 🆘 Support
 
-- Plugin-specific issues: Check individual plugin documentation
-- General questions: Open an issue in this repository
-- LAO core functionality: Visit the main LAO project
+- Plugin-specific issues: check their README or linked repo.
+- General help/questions? Open an issue here.
+- For engine/core issues: visit [LAO main repo](https://github.com/abendrothj/lao).
+
+---
+
+## 📄 License
+
+Each community plugin: see its own license.  
+This registry is MIT-licensed.
+
+---
+
+## 💡 About
+
+Built for the LAO ecosystem with GitHub Pages & Jekyll.  
+Want to help LAO grow? Build and contribute a plugin!

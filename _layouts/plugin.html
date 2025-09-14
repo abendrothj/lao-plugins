@@ -1,0 +1,90 @@
+---
+layout: default
+---
+
+<article class="plugin-page">
+  <header class="plugin-header">
+    <h1 class="plugin-title">{{ page.title | default: site.title }}</h1>
+    {% if page.description %}
+      <p class="plugin-description">{{ page.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="plugin-content">
+    {{ content }}
+  </div>
+
+  {% if page.url contains '/plugins/' %}
+  <div class="plugin-metadata">
+    <h2>Plugin Information</h2>
+    
+    {% assign plugin_path = page.url | remove: '/plugins/' | remove: '/' %}
+    {% assign yaml_file = site.plugins | where: "slug", plugin_path | first %}
+    
+    <div class="metadata-grid">
+      <div class="metadata-item">
+        <strong>Category:</strong> Plugin
+      </div>
+      <div class="metadata-item">
+        <strong>Path:</strong> <code>/plugins/{{ plugin_path }}/</code>
+      </div>
+      <div class="metadata-item">
+        <strong>Documentation:</strong> 
+        <a href="{{ page.url }}README.html">README</a> | 
+        <a href="{{ page.url }}plugin.yaml">Manifest</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <footer class="plugin-footer">
+    <p><a href="{{ "/" | relative_url }}">← Back to Plugin Marketplace</a></p>
+  </footer>
+</article>
+
+<style>
+.plugin-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.plugin-header {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #e1e4e8;
+}
+
+.plugin-title {
+  color: #0366d6;
+  margin-bottom: 0.5rem;
+}
+
+.plugin-description {
+  font-size: 1.1em;
+  color: #586069;
+  margin: 0;
+}
+
+.plugin-metadata {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #f6f8fa;
+  border-radius: 6px;
+}
+
+.metadata-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+}
+
+.metadata-item {
+  padding: 0.25rem 0;
+}
+
+.plugin-footer {
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e1e4e8;
+}
+</style>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abendrothj.github.io/lao-plugins/sitemap.xml
